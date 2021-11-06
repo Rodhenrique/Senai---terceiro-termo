@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud JS</title>
+    <script src="Script.js"></script>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="cont">
+
+            <div>
+
+                <label for="nome">Nome do Livro:</label><br>
+                <input type="text" id="nome"><br>
+
+                <label for="genero">Genêro Livro:</label><br>
+                <input type="text" id="genero"><br>
+
+                <label for="autor">Autor do Livro:</label><br>
+                <input type="text" id="autor"><br>
+
+                <label for="editora">Editora do Livro:</label><br>
+                <input type="text" id="editora"><br>
+
+                <label for="dataLancamento">Data de lançamento do livro:</label><br>
+                <input type="date" id="dataLancamento"><br>
+
+            </div>
+            <div>
+
+                <label for="QtdPaginas">Quantidade de páginas:</label><br>
+                <input type="text" id="QtdPaginas"><br>
+
+                <label for="preco">Preço do livro:</label><br>
+                <input type="text" id="preco"><br>
+
+                <label for="descricao">Descrição:</label><br>
+                <input type="text" id="descricao"><br>
+
+                <label for="Idioma">Idioma do livro:</label><br>
+                <input type="text" id="Idioma"><br>
+
+                <label for="RankMaisVendidos">Posição no ranking dos mais vendidos:</label><br>
+                <input type="text" id="RankMaisVendidos"><br>
+            </div>
+        </div>
+        <div>
+            <button onclick="AddLivro()">Enviar se Deus quiser</button>
+        </div>
+    </div>
+    <table id="tabela">
+        <thead>
+            <tr>
+                <th>nome</th>
+                <th>genero</th>
+                <th>autor</th>
+                <th>editora</th>
+                <th>dataLancamento</th>
+                <th>QtdPaginas</th>
+                <th>preco</th>
+                <th>descricao</th>
+                <th>Idioma</th>
+                <th>RankMaisVendidos</th>
+                <th>remove</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+
+</html>

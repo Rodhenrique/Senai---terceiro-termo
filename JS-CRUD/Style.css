@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    height: 400px;
+    width: 500px;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cont {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+
+#cont>div>input {
+    padding: 15px;
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: 0;
+    font-weight: 700;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#tabela table {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-collapse: collapse;
+    border: 0;
+}
+
+#tabela th {
+    width: 100px;
+    padding: 2px;
+    background-color: gray;
+}
+
+#tabela td {
+    width: 100px;
+    text-align: center;
+}
+
+#tabela input {
+    border: none;
+    width: 100px;
+    text-align: center;
+}

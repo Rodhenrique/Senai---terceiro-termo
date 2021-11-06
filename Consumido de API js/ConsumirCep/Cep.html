@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar cep</title>
+    <script src="Cep.js"></script>
+    
+</head>
+<style>
+    #container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 50%;
+        height: 30%;
+        margin: 10em auto;
+        align-items: center;
+    }
+    
+    #info {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <input type="text" id="texto">
+        <button onclick="buscarCep()">Clique Aqui</button>
+
+        <div id="info">
+
+        </div>
+    </div>
+</body>
+
+</html>

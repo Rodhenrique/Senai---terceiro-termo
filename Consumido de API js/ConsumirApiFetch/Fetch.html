@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <script src="Fetch.js"></script>
+</head>
+<style>
+    #container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        justify-content: space-evenly;
+        width: 20%;
+        height: 120px;
+        align-items: center;
+        text-align: center;
+        margin: 10em auto;
+    }
+    
+    #imagem {
+        display: flex;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <label for="">Buscar Pokemon</label>
+        <input type="text" id="texto">
+        <button onclick="buscar()">Click aqui</button>
+        <div id="info">
+
+        </div>
+
+        <div id="imagem">
+
+        </div>
+
+        <table>
+            <tr>
+                <td>Nome Pokemon</td>
+                <td>Tipo Pokemon</td>
+            </tr>
+            <tr>
+                <td id="nomePoke"></td>
+                <td id="tipoPoke"></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

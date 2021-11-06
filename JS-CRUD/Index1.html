@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio js</title>
+    <style>
+        html,
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 20px auto;
+            text-align: center;
+            padding: 0;
+        }
+        
+        #container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        #container div {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="manipula">Eu sou a frase do exemplo. Serei alterada quando você clicar.</div>
+        <hr>
+        <h2>Altere a frase acima clicando nos botões</h2>
+    </div>
+    <div id="container">
+        <div>
+
+            <label for="">mudar tamanho da fonte</label>
+            <input type="range" min="1" max="25" value="Muda tamanho da fonte" onchange="mudaTamanhoFonte(this)" />
+        </div>
+        <div>
+            <label for="">mudar cor do background</label>
+            <input type="color" onchange="mudaBackground(this)" />
+        </div>
+        <div>
+            <label for="">Mudar da fonte</label>
+            <input type="color" onchange="mudaCor(this)" />
+        </div>
+        <div>
+            <label for="">mudar fonte da frase</label>
+            <select id="fonte" onchange="mudaFamilia()">
+                <option value="roboto">roboto</option>
+                <option value="arial">arial</option>
+                <option value="verdana">verdana</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="">Coloca borda e tirar</label>
+            <input type="checkbox" id="check" value="Coloca borda" onclick="colocaBorder()" />
+        </div>
+        <div>
+            <label for="">Mudar cor da borda</label>
+            <input type="color" onchange="corBorder(this)" />
+        </div>
+        <div>
+            <label for="">Mudar espressura da borda</label>
+            <input type="range" min="1" max="25" onchange="BorderPX(this)" />
+        </div>
+        <div>
+            <label for="">Esconde a div</label>
+            <input type="button" value="Esconde a div" onclick="escondeDiv()" />
+        </div>
+    </div>
+</body>
+<script>
+    var corBordar = "#111111";
+    var tamanhoBorda = "2";
+
+    function mudaCor(cor) {
+        document.getElementById("manipula").style.color = cor.value;
+    }
+
+    function mudaTamanhoFonte(tamanho) {
+
+        document.getElementById("manipula").style.fontSize = tamanho.value + "px";
+    }
+
+    function mudaBackground(corBackGround) {
+        document.getElementById("manipula").style.backgroundColor = corBackGround.value;
+    }
+
+    function mudaFamilia() {
+        document.getElementById("manipula").style.fontFamily = document.getElementById("fonte").value;
+    }
+
+    function escondeDiv() {
+        document.getElementById("manipula").style.display = document.getElementById("manipula")
+            .style.display != 'none' ? 'none' : 'block';
+    }
+
+    function colocaBorder() {
+        document.getElementById("manipula").style.border = document.getElementById("check").checked == true ? tamanhoBorda + "px solid" + corBordar : "none";
+    }
+
+    function corBorder(cor) {
+        corBordar = cor.value;
+        document.getElementById("manipula").style.border = tamanhoBorda + "px solid" + cor.value;
+        document.getElementById("check").checked = true;
+    }
+
+    function BorderPX(tamanho) {
+        tamanhoBorda = tamanho.value;
+        document.getElementById("manipula").style.border = tamanho.value + "px solid" + corBordar;
+        document.getElementById("check").checked = true;
+    }
+</script>
+
+</html>

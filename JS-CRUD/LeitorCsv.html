@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de Csv</title>
+</head>
+
+<body>
+    <input type="file" id="inputCSV" onchange="pegaCSV(this)">
+
+    <table id="tabela">
+        <thead>
+            <tr>
+                <th>Nº Matrícula</th>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>Sexo</th>
+                <th>Email</th>
+                <th>Nível</th>
+                <th>Tipo de curso</th>
+                <th>Curso</th>
+                <th>Turma</th>
+                <th>Turno</th>
+                <th>Termo</th>
+                <th>Data de matrícula</th>
+                <th>Raça</th>
+            </tr>
+        </thead>
+    </table>
+    <div id="CSVsaida"></div>
+</body>
+<script>
+    function pegaArquivo(files) {
+        var imgLoca = document.getElementById('imgLocal')
+        var file = files[0];
+        var img = document.createElement("img");
+        img.file = file;
+
+        imgLocal.appendChild(img)
+
+        var reader = new FileReader();
+        reader.onload = (function(aImg) {
+            return function(e) {
+                aImg.src = e.target.result;
+            };
+        })(img);
+        reader.readAsDataURL(file);
+    }
+    var leitorDeCSV = new FileReader()
+    window.onload = function init() {
+        leitorDeCSV.onload = leCSV;
+    }
+
+    function leCSV(evt) {
+
+        var tabela = document.getElementById("tabela");
+        var numeroLinhas = tabela.rows.length;
+        var linha = tabela.insertRow(numeroLinhas);
+
+        var fileArr = evt.target.result.split('\n');
+
+        for (var i = 0; i < 10; i++) {
+            var fileLine = fileArr[i].split(',');
+            for (var h = 0; h < fileLine.length; h++) {
+                console.log(h + " " + fileLine[h].trim());
+                let celula1 = linha.insertCell(h);
+                celula1.innerHTML = fileLine[h].trim();
+            }
+        }
+    }
+
+    function pegaCSV(inputFile) {
+        var file = inputFile.files[0];
+        leitorDeCSV.readAsText(file);
+    }
+</script>
+
+</html>
